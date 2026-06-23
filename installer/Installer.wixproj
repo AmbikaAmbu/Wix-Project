@@ -1,0 +1,23 @@
+<Project ToolsVersion="4.0"
+ xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+
+    <OutputName>MyApplication</OutputName>
+
+    <DefineConstants>
+      ProductVersion=$(ProductVersion)
+    </DefineConstants>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <Compile Include="Product.wxs" />
+    <Compile Include="AppFiles.wxs" />
+
+  </ItemGroup>
+
+  <Import Project="$(WixTargetsPath)" />
+
+</Project>
