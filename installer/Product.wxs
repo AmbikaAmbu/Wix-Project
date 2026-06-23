@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Product
+      Id="*"
+      Name="My Application"
+      Language="1033"
+      Version="$(var.ProductVersion)"
+      Manufacturer="MyCompany"
+      UpgradeCode="E29AAA11-1111-4444-8888-123456789999">
+
+    <Package
+        InstallerVersion="500"
+        Compressed="yes"
+        InstallScope="perMachine" />
+
+    <MajorUpgrade
+        DowngradeErrorMessage="A newer version is already installed."/>
+
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature"
+             Title="My Application"
+             Level="1">
+
+      <ComponentGroupRef Id="AppFiles"/>
+
+    </Feature>
+
+  </Product>
+
+</Wix>
